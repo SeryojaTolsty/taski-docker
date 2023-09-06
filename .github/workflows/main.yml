@@ -1,8 +1,3 @@
-
-I apologize for the oversight. It seems there was an indentation issue in the previous YAML file. Here's the corrected version:
-
-yaml
-Copy code
 name: Main Taski workflow
 
 on:
