@@ -21,8 +21,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Set up Node.js
+      - name: Set up Node.js 16
         uses: actions/setup-node@v2
+        with:
+          node-version: 16
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -64,3 +66,9 @@ jobs:
           python -m flake8 backend/
           cd backend/
           python manage.py test
+      - name: Clear GitHub Actions cache
+        run: |
+          git clean -ffdx
+          npm cache clean --force
+        env:
+          CI: true
